@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarjetas Responsive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body{
+            margin:20px;
+            font-family:Arial, sans-serif;
+        }
+
+        .contenedor{
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+            gap:15px;
+        }
+
+        .tarjeta{
+            height:180px;
+            border-radius:12px;
+        }
+
+        .t1{background:#ff595e;}
+        .t2{background:#1982c4;}
+        .t3{background:#8ac926;}
+        .t4{background:#ffca3a;}
+        .t5{background:#6a4c93;}
+        .t6{background:#00b4d8;}
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <div class="tarjeta t1"></div>
+    <div class="tarjeta t2"></div>
+    <div class="tarjeta t3"></div>
+    <div class="tarjeta t4"></div>
+    <div class="tarjeta t5"></div>
+    <div class="tarjeta t6"></div>
+</div>
+
+
+
+
+
+
+<p>Este código crea una galería de tarjetas de colores con un diseño responsive utilizando CSS Grid. El contenedor organiza automáticamente las tarjetas en varias columnas cuando la pantalla es grande y reduce la cantidad de columnas a medida que el espacio disponible disminuye. Gracias a la propiedad grid-template-columns: repeat(auto-fit, minmax(180px,1fr)), las tarjetas se adaptan al tamaño de la pantalla sin necesidad de hacer cambios manuales, permitiendo que en computadoras se muestren varias por fila y en celulares se acomoden una debajo de otra para facilitar la visualización..</p>
+</body>
+</html>
