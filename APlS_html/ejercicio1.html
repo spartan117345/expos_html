@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation API</title>
+</head>
+<body>
+
+<h2>HTML Geolocation API</h2>
+
+<p>Haz clic en el botón para obtener tu ubicación.</p>
+
+<button onclick="getLocation()">Obtener ubicación</button>
+
+<p id="demo"></p>
+
+<script>
+
+const x = document.getElementById("demo");
+
+function getLocation() {
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+    } else {
+
+        x.innerHTML = "La geolocalización no es compatible con este navegador.";
+
+    }
+
+}
+
+function showPosition(position) {
+
+    x.innerHTML =
+    "Latitud: " + position.coords.latitude +
+    "<br>Longitud: " + position.coords.longitude;
+
+}
+
+function showError(error) {
+
+    switch(error.code) {
+
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "El usuario rechazó la solicitud de ubicación.";
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "La información de ubicación no está disponible.";
+            break;
+
+        case error.TIMEOUT:
+            x.innerHTML = "La solicitud de ubicación expiró.";
+            break;
+
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "Ocurrió un error desconocido.";
+            break;
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

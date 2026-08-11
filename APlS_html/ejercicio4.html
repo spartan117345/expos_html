@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Workers API</title>
+</head>
+
+<body>
+
+<h2>Web Workers API</h2>
+
+<p>Contador:</p>
+
+<p id="result"></p>
+
+<button onclick="startWorker()">Iniciar</button>
+
+<button onclick="stopWorker()">Detener</button>
+
+<script>
+
+let w;
+
+function startWorker() {
+
+    if (typeof(Worker) !== "undefined") {
+
+        if (typeof(w) == "undefined") {
+
+            w = new Worker("demo_workers.js");
+
+        }
+
+        w.onmessage = function(event) {
+
+            document.getElementById("result").innerHTML =
+            event.data;
+
+        };
+
+    } else {
+
+        document.getElementById("result").innerHTML =
+        "Tu navegador no soporta Web Workers.";
+
+    }
+
+}
+
+function stopWorker() {
+
+    w.terminate();
+
+    w = undefined;
+
+}
+
+</script>
+
+</body>
+</html>

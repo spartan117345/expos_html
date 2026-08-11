@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Web Storage API</title>
+</head>
+
+<body>
+
+<h2>HTML Web Storage API</h2>
+
+<p>Haz clic en el botón para aumentar el contador.</p>
+
+<button onclick="clickCounter()" type="button">
+Contar
+</button>
+
+<p id="result"></p>
+
+<p>El valor se guarda en el navegador utilizando localStorage.</p>
+
+<script>
+
+function clickCounter() {
+
+if (typeof(Storage) !== "undefined") {
+
+    if (localStorage.clickcount) {
+
+    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+
+    } else {
+
+    localStorage.clickcount = 1;
+
+    }
+
+    document.getElementById("result").innerHTML =
+    "Has hecho clic " + localStorage.clickcount + " veces.";
+
+} else {
+
+    document.getElementById("result").innerHTML =
+    "Tu navegador no soporta Web Storage.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

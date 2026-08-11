@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Canvas API</title>
+
+</head>
+
+<body>
+
+<h2>Canvas API</h2>
+
+<canvas id="myCanvas"
+        width="300"
+        height="150"
+        style="border:1px solid black;">
+</canvas>
+
+<script>
+
+const c = document.getElementById("myCanvas");
+
+const ctx = c.getContext("2d");
+
+ctx.fillStyle = "red";
+
+ctx.fillRect(20, 20, 150, 100);
+
+</script>
+
+</body>
+</html>
